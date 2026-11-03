@@ -1,3 +1,10 @@
+<div align="center">
+    <p align="center">
+        <a href="https://github.com/cybersecurity-dev/awesome-elf-internals">
+          <img width="10%" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/Tux.svg" />
+        </a>
+    </p>
+
 ```mermaid
 flowchart TD
     A[User Applications] --> B["System Libraries<br/>glibc, libpthread"]
@@ -39,7 +46,8 @@ flowchart TD
     style R fill:#ff7675,color:#fff
 ```
 
-# Awesome Linux Internals Resources [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# **`Awesome`** Linux Internals Resources [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+</div>
 
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://elixir.bootlin.com/linux/v6.17/source)
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)]()
@@ -54,6 +62,42 @@ flowchart TD
     <img src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/bar.gif">
 </p>
 
+```mermaid
+sequenceDiagram
+    participant App as Application
+    participant libc
+    participant Sys as Syscall Interface
+    participant VFS
+    participant FS as Filesystem
+    participant Cache as Page Cache
+    participant Block as Block Layer
+    participant Driver
+    participant Disk
+
+    App->>libc: read(fd, buffer, size)
+    libc->>Sys: system call
+    Sys->>VFS: vfs_read()
+    VFS->>FS: filesystem read
+
+    FS->>Cache: check page cache
+
+    alt Cache Hit
+        Cache-->>FS: cached page
+    else Cache Miss
+        FS->>Block: request block
+        Block->>Driver: submit I/O
+        Driver->>Disk: read
+        Disk-->>Driver: data
+        Driver-->>Block: completed
+        Block-->>Cache: populate page
+        Cache-->>FS: page
+    end
+
+    FS-->>VFS: bytes
+    VFS-->>Sys: result
+    Sys-->>libc: return
+    libc-->>App: bytes read
+```
 ## 📖 Contents
 - [My Other Awesome Lists](#my-other-awesome-lists)
 - [Contributing](#contributing)

@@ -1,7 +1,7 @@
 <div align="center">
     <p align="center">
         <a href="https://github.com/cybersecurity-dev/awesome-elf-internals">
-          <img width="10%" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/Tux.svg" />
+          <img width="7%" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/Tux.svg" />
         </a>
     </p>
 
@@ -46,7 +46,7 @@ flowchart TD
     style R fill:#ff7675,color:#fff
 ```
 
-# **`Awesome`** Linux Internals Resources [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# **`Awesome`** [Linux](https://github.com/cybersecurity-dev/awesome-elf-internals) [Internals](https://github.com/cybersecurity-dev/awesome-linux-internals) Resources [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 </div>
 
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://elixir.bootlin.com/linux/v6.17/source)
@@ -99,9 +99,18 @@ sequenceDiagram
     libc-->>App: bytes read
 ```
 ## 📖 Contents
+- [Resources](#resources)
+    - [Books](#books)
+    - [Videos](#videos)
 - [My Other Awesome Lists](#my-other-awesome-lists)
 - [Contributing](#contributing)
 - [Contributors](#contributors)
+
+## Resources
+
+### Books
+
+### Videos
 
 ##
 
